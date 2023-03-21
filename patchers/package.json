@@ -1,0 +1,13 @@
+{
+  "name": "max-artnet",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node master.js"
+  },
+  "dependencies": {
+    "artnet": "^1.4.0"
+  },
+  "devDependencies": {
+  }
+}
