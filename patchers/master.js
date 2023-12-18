@@ -35,20 +35,54 @@ if (isMax) {
     // Debug.log(args);
     switch (args[1]) {
       case 'dmx':
-        const h = new Date().getHours();
         // artnet.set(3, args[2]);
-        // Debug.log(`ch: ${args[2]} ${args[3]} ${args[4]} ${args[5]} ${args[6]} ${args[7]}`);
-        const chdata = [
-          args[2],
-          args[3],
+        // Debug.log(`ch: ${args[2]} ${args[3]} ${args[4]} ${args[5]} ${args[6]} ${args[7]} ${args[8]} ${args[9]}`);
+        var chdata = [
+          args[4],
+          0,
+          0,
+          0,
+          args[5],
+          args[6],
+          args[7],
+          args[8],
+          args[9],
+          args[10]
+        ];
+        // args[2], // ARTNET_UNIVERSE
+        // args[3], // ARTNET_START_CHANNEL
+        artnet.set(args[2], args[3], chdata);
+        break;
+
+      case 'dmxmini':
+        // artnet.set(3, args[2]);
+        // Debug.log(`ch: ${args[2]} ${args[3]} ${args[4]} ${args[5]} ${args[6]} ${args[7]} ${args[8]} ${args[9]}`);
+        var chdata = [
+          args[4],
+          args[5],
+          args[6],
+          args[7],
+          args[8],
+          args[9],
+          args[10],
+          0
+        ];
+        // args[2], // ARTNET_UNIVERSE
+        // args[3], // ARTNET_START_CHANNEL
+        artnet.set(args[2], args[3], chdata);
+        break;
+
+      case 'dmxdimmer':
+        var chdata = [
           args[4],
           args[5],
           args[6],
           args[7]
         ];
-        artnet.set(CONST_PARAM.ARTNET_UNIVERSE, CONST_PARAM.ARTNET_START_CHANNEL, chdata);
+        artnet.set(args[2], args[3], chdata);
         break;
-	
+
     }
+
   });
 }
