@@ -77,7 +77,8 @@ if (isMax) {
           args[4],
           args[5],
           args[6],
-          args[7]
+          args[7],
+          args[8]
         ];
         artnet.set(args[2], args[3], chdata);
         break;
